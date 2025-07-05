@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.LoginFragment"
+    android:background="@color/backgroundColor">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_begin="30dp"
+        android:orientation="vertical"
+        android:id="@+id/glMarginLeft"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_end="30dp"
+        android:orientation="vertical"
+        android:id="@+id/glMarginRight"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent=".15"
+        android:orientation="horizontal"
+        android:id="@+id/glTop"
+        />
+
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:src="@drawable/pickup_logo"
+        app:layout_constraintTop_toTopOf="@id/glTop"
+        app:layout_constraintStart_toStartOf="@+id/glMarginLeft"
+        app:layout_constraintEnd_toStartOf="@id/glMarginRight"
+        android:id="@+id/ivLogo"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Iniciar Sesion"
+        android:fontFamily="@font/poppins_regular"
+        app:layout_constraintTop_toBottomOf="@+id/ivLogo"
+        app:layout_constraintStart_toStartOf="@id/glMarginLeft"
+        app:layout_constraintEnd_toEndOf="@id/glMarginRight"
+        android:textColor="@color/secundaryMarkedColor"
+        android:id="@+id/tvLogin"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiUserContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/glMarginLeft"
+        app:layout_constraintEnd_toStartOf="@+id/glMarginRight"
+        app:layout_constraintTop_toBottomOf="@+id/tvLogin"
+        android:hint="Usuario"
+        android:layout_marginTop="20dp"
+        app:startIconDrawable="@drawable/user_icon"
+        app:hintTextColor="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
+        app:startIconTint="@color/colorPrimary"
+        app:boxStrokeColor="@color/markedColor"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:textColor="@color/colorPrimary"
+            android:lines="1"
+            android:inputType="text"
+            android:maxLines="1"
+            android:id="@+id/user"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiPasswordContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/glMarginLeft"
+        app:layout_constraintEnd_toStartOf="@+id/glMarginRight"
+        app:layout_constraintTop_toBottomOf="@+id/tiUserContainer"
+        android:hint="Contraseña"
+        android:layout_marginTop="20dp"
+        app:startIconDrawable="@drawable/password_icon"
+        app:hintTextColor="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
+        app:startIconTint="@color/colorPrimary"
+        app:boxStrokeColor="@color/markedColor"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:textColor="@color/colorPrimary"
+            android:lines="1"
+            android:maxLines="1"
+            android:inputType="textPassword"
+            android:id="@+id/password"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Entrar"
+        app:layout_constraintTop_toBottomOf="@+id/tiPasswordContainer"
+        app:layout_constraintStart_toStartOf="@id/glMarginLeft"
+        app:layout_constraintEnd_toEndOf="@+id/glMarginRight"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/markedColor"
+        android:textColor="@color/white"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:id="@+id/btLogin"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

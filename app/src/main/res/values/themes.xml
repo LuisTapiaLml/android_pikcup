@@ -1,0 +1,23 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PickupAndroid" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary" >@color/colorPrimary</item>
+
+        <!-- Button attributes (applied to all buttons in group) -->
+        <item name="materialButtonOutlinedStyle">@style/MyToggleButtonStyle</item>
+
+    </style>
+
+    <style name="Theme.PickupAndroid" parent="Base.Theme.PickupAndroid" />
+
+
+    <style name="MyToggleButtonStyle" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@color/markedColor</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:textColor">@color/markedColor</item>
+    </style>
+
+
+</resources>

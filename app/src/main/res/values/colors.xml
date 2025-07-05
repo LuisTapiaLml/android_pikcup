@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="new_background_color">#f6f6f6</color>
+
+    <color name="colorPrimary">#575757</color>
+    <color name="colorSecundary">#6B6B6B</color>
+    <color name="markedColor">#0277ec</color>
+    <color name="secundaryMarkedColor">#6819cd</color>
+    <color name="backgroundColor">#FCFCFF</color>
+    <color name="textColorLigth">#A8A8A8</color>
+
+    <color name="colorDanger">#EABC081F</color>
+    <color name="colorSuccess">#28a745</color>
+    <color name="colorWarning">#ffc107</color>
+
+</resources>

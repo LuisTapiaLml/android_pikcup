@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.NumSerieFragment">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_begin="15dp"
+        android:orientation="vertical"
+        android:id="@+id/glMarginLeft"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_end="15dp"
+        android:orientation="vertical"
+        android:id="@+id/glMarginRight"
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        android:background="@color/white"
+        app:startIconTint="@color/colorPrimary"
+        app:strokeWidth="1dp"
+        android:id="@+id/cvData"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            >
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_begin="15dp"
+                android:id="@+id/glDataMarginLeft"
+                android:orientation="vertical"
+                />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_end="15dp"
+                android:id="@+id/glDataMarginRight"
+                android:orientation="vertical"
+                />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_begin="40dp"
+                android:id="@+id/glDataTop"
+                android:orientation="horizontal"
+                />
+
+            <Button
+                style="@style/MyOutlinedButton"
+                android:id="@+id/btRegresar"
+                app:layout_constraintStart_toStartOf="@+id/glDataMarginLeft"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/glDataTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="Regresar"
+                app:icon="@drawable/back_icon"
+                app:iconTint="@color/markedColor"
+                android:text="Regresar"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/colorPrimary"
+                app:strokeColor="@color/white"
+                android:textAllCaps="false"
+                app:iconSize="18dp"
+                />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/product_example_2"
+                app:layout_constraintStart_toStartOf="@id/glDataMarginLeft"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@id/glDataTop"
+                android:layout_marginTop="5dp"
+                android:id="@+id/ivProductImage"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/glDataTop"
+                app:layout_constraintStart_toEndOf="@+id/ivProductImage"
+                app:layout_constraintEnd_toEndOf="@+id/glDataMarginRight"
+                android:text="MacBook Pro De 14 Pulgadas Chip M4 Pro, CPU De 14 Nucleos, GPU De 20 Nucleos, 24GB De Memoria Unificada Y Almacenamiento 1TB SSD"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:id="@+id/tvProductDescription"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tvProductDescription"
+                app:layout_constraintStart_toEndOf="@+id/ivProductImage"
+                android:text="195949873836"
+                android:layout_marginTop="10dp"
+                android:id="@+id/tvProductEan"
+                android:textColor="@color/colorPrimary"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tvProductEan"
+                app:layout_constraintStart_toEndOf="@+id/ivProductImage"
+                app:layout_constraintEnd_toStartOf="@+id/glDataMarginRight"
+                android:text="Cantidad: 2"
+                android:layout_marginTop="10dp"
+                android:id="@+id/tvProductQuantity"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginBottom="15dp"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/rvNumSerie"
+        app:layout_constraintTop_toBottomOf="@+id/cvData"
+        app:layout_constraintStart_toStartOf="@+id/glMarginLeft"
+        app:layout_constraintEnd_toEndOf="@+id/glMarginRight"
+        app:layout_constraintBottom_toTopOf="@+id/btGuardar"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/glMarginRight"
+        android:backgroundTint="@color/markedColor"
+        android:text="Guardar"
+        android:id="@+id/btGuardar"
+        android:textColor="@color/white"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

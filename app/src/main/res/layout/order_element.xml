@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    android:background="@color/white"
+    app:strokeWidth="1dp"
+    android:id="@+id/MCOrderElement"
+    android:layout_marginBottom="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="10dp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:paddingBottom="10dp"
+        >
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintGuide_begin="15dp"
+            android:orientation="vertical"
+            android:id="@+id/glMarginLeft"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintGuide_end="15dp"
+            android:orientation="vertical"
+            android:id="@+id/glMarginRight"
+            />
+
+
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/CHStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="90dp"
+            android:text="Asignado"
+            android:textColor="@color/colorDanger"
+            android:textColorHint="@color/colorWarning"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:layout_marginTop="-10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/BottomRightRounded" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="@+id/glMarginLeft"
+            android:text="Número Pedido:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:id="@+id/tvOrderNumberTitle"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/tvOrderNumberTitle"
+            app:layout_constraintEnd_toEndOf="@+id/glMarginRight"
+            app:layout_constraintBottom_toBottomOf="@+id/tvOrderNumberTitle"
+            android:text="267893"
+            android:textSize="16sp"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/tvOrderNumber"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tvOrderNumberTitle"
+            app:layout_constraintStart_toStartOf="@id/glMarginLeft"
+            android:text="Nombre:"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:id="@+id/tvNameTitle"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="@+id/tvNameTitle"
+            app:layout_constraintStart_toEndOf="@+id/tvNameTitle"
+            app:layout_constraintEnd_toStartOf="@id/glMarginRight"
+            android:text="Jose Luis Enrique Pérez Tapia"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/tvCustomerName"
+            />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/tvOrderDate"
+            android:text="10/05/2025"
+            app:layout_constraintTop_toBottomOf="@+id/tvCustomerName"
+            app:layout_constraintEnd_toEndOf="@id/glMarginRight"
+            app:layout_constraintStart_toStartOf="@id/glMarginLeft"
+            android:textSize="16sp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/textColorLigth"
+
+
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

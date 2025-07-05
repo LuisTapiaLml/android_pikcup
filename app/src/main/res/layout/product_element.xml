@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    android:background="@color/white"
+    app:strokeWidth="1dp"
+    android:id="@+id/MCOrderElement"
+    android:layout_marginBottom="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="10dp"
+
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:paddingBottom="10dp"
+        >
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="15dp"
+            android:id="@+id/glMarginLeft"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="15dp"
+            android:id="@+id/glMarginRight"
+            />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/CHSerialNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="90dp"
+            android:text="Número serie"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:layout_marginTop="-10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            app:shapeAppearanceOverlay="@style/BottomRightRounded"
+            android:backgroundTint="@color/markedColor"
+            android:textColor="@color/white"
+            />
+
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/ivProductImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/glMarginLeft"
+            android:src="@drawable/product_example"
+            app:riv_corner_radius="10dp"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivProductImage"
+            app:layout_constraintEnd_toStartOf="@id/CHSerialNumber"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:text="MacBook Air De 13 Pulgadas Chip M2, CPU De 8 Nucleos, GPU De 8 Nucleos, 16GB De Memoria Unificada Y Almacenamiento 256GB SSD"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:id="@+id/tvProductDescription"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvProductDescription"
+            app:layout_constraintStart_toEndOf="@+id/ivProductImage"
+            app:layout_constraintEnd_toEndOf="@id/glMarginRight"
+            android:layout_marginTop="5dp"
+            android:text="195949805257"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/tvProductEan"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvProductEan"
+            app:layout_constraintStart_toEndOf="@+id/ivProductImage"
+            app:layout_constraintEnd_toEndOf="@id/glMarginRight"
+            android:layout_marginTop="5dp"
+            android:text="Cantidad: 2"
+            android:textColor="@color/colorSecundary"
+            android:id="@+id/tvProductQuantity"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvProductQuantity"
+            app:layout_constraintStart_toEndOf="@+id/ivProductImage"
+            app:layout_constraintEnd_toEndOf="@id/glMarginRight"
+            android:layout_marginTop="5dp"
+            android:text="Precio Unitario: $222,519.11"
+            android:textColor="@color/colorSecundary"
+            android:id="@+id/tvProductPrice"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".ui.fragments.OrderListFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintGuide_begin="15dp"
+        android:orientation="vertical"
+        android:id="@+id/glMarginLeft"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintGuide_end="15dp"
+        android:orientation="vertical"
+        android:id="@+id/glMarginRight"
+        />
+
+
+
+
+    <androidx.cardview.widget.CardView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="0dp"
+        android:layout_height="110dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/glMarginLeft"
+        app:layout_constraintEnd_toStartOf="@+id/glMarginRight"
+        android:background="@color/cardview_dark_background"
+        android:layout_marginTop="15dp"
+        app:cardBackgroundColor="@color/white"
+        android:id="@+id/CVHero"
+        android:layout_marginBottom="15dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_percent=".5"
+                android:orientation="vertical"
+                android:id="@+id/glCardCenter"
+                />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_begin="10dp"
+                android:orientation="vertical"
+                android:id="@+id/gltextLeftMargin"
+                />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_end="10dp"
+                android:orientation="vertical"
+                android:id="@+id/gltextRigthMargin"
+                />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_end="5dp"
+                android:orientation="horizontal"
+                android:id="@+id/glCardMarginBottom"
+                />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_percent=".3"
+                android:orientation="horizontal"
+                android:id="@+id/glTextLine"
+                />
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/glCardCenter"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:src="@drawable/pickup_logo"
+                android:id="@+id/ivLogo"
+                />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Sucursal Acapulco"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/gltextRigthMargin"
+                app:layout_constraintStart_toEndOf="@+id/glCardCenter"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="@+id/glTextLine"
+                android:textColor="@color/colorPrimary"
+                android:id="@+id/tvStore"
+                />
+
+
+            <Button
+                style="@style/Widget.Material3.Button.TextButton"
+                android:id="@+id/textButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cerrar Sesión"
+                android:textSize="13dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvStore"
+                app:layout_constraintEnd_toStartOf="@+id/gltextRigthMargin"
+                app:layout_constraintStart_toEndOf="@+id/glCardCenter"
+                android:textColor="@color/colorDanger"
+                android:textStyle="bold"
+
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tfSearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/CVHero"
+        app:layout_constraintStart_toEndOf="@id/glMarginLeft"
+        app:layout_constraintEnd_toStartOf="@+id/glMarginRight"
+        android:layout_marginTop="10dp"
+        app:boxCornerRadiusBottomEnd="8dp"
+        android:hint="Buscar..."
+        app:hintTextColor="@color/colorPrimary"
+        android:textColorHint="@color/markedColor"
+        app:startIconTint="@color/markedColor"
+        app:boxStrokeColor="@color/colorPrimary"
+        app:startIconDrawable="@drawable/search_icon"
+        app:startIconContentDescription="buscar"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:lines="1"
+            android:inputType="text"
+            android:maxLines="1"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggleButtonGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="8dp"
+        app:singleSelection="true"
+        app:selectionRequired="true"
+        app:layout_constraintTop_toBottomOf="@id/tfSearch"
+        app:layout_constraintStart_toEndOf="@+id/glMarginLeft"
+        app:layout_constraintEnd_toStartOf="@+id/glMarginRight"
+        app:checkedButton="@id/btActiveFilter">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btActiveFilter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Activos"
+            app:toggleCheckedStateOnClick="true"
+            android:textSize="11sp"
+            app:strokeColor="@color/markedColor"
+            style="@style/MyToggleButtonStyle"
+            android:backgroundTint="@color/markedColor"
+            android:textColor="@color/white"
+
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btFinishFilter"
+
+            style="@style/MyToggleButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Finalizados"
+
+            android:textSize="11sp"
+            app:strokeColor="@color/markedColor" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btAllFilter"
+            android:layout_width="0dp"
+            android:textSize="11sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/MyToggleButtonStyle"
+            android:text="Todos"
+            app:strokeColor="@color/markedColor"
+            />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        app:layout_constraintTop_toBottomOf="@+id/toggleButtonGroup"
+        app:layout_constraintStart_toEndOf="@id/glMarginLeft"
+        app:layout_constraintEnd_toStartOf="@id/glMarginRight"
+        android:id="@+id/MDDivider"
+        android:layout_marginBottom="10dp"
+        app:dividerColor="@color/markedColor"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/MDDivider"
+        app:layout_constraintStart_toEndOf="@id/glMarginLeft"
+        app:layout_constraintEnd_toStartOf="@+id/glMarginRight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/rvOrdersContainer"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
