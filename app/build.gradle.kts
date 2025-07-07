@@ -52,6 +52,11 @@ dependencies {
     //Imágenes con bordes redondeados
     implementation(libs.roundedimageview)
 
+    //Adicional para el interceptor
+    implementation(libs.logging.interceptor)
+
+    implementation(libs.androidx.core.splashscreen)
+
     implementation(libs.material)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

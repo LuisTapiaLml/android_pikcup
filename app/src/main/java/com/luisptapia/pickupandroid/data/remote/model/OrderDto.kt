@@ -4,14 +4,17 @@ import com.google.gson.annotations.SerializedName
 
 data class OrderDto(
 
-    @SerializedName("orderid")
-    var order_id:Int,
+    @SerializedName("id")
+    var id:Int,
 
-    @SerializedName("order_number")
-    var order_number:String,
+    @SerializedName("userId")
+    var user_id:Int,
 
     @SerializedName("status")
     var status: String,
+
+    @SerializedName("email")
+    var email: String,
 
     @SerializedName("createdAt")
     var order_date:String,
@@ -19,12 +22,12 @@ data class OrderDto(
     @SerializedName("customer_name")
     var customer_name: String,
 
-    @SerializedName("customerPhone")
-    var customer_phone: String? =null,
+    @SerializedName("phone")
+    var phone: String? =null,
 
-    @SerializedName("total")
+    @SerializedName("totalAmount")
     var total: Double? =null,
 
-    @SerializedName("products")
-    var products:List<OrderDetailDto> ? =null
+    @SerializedName("orderDetails")
+    var products:List<OrderDetailDto>
 )

@@ -4,10 +4,10 @@ import com.google.gson.annotations.SerializedName
 
 data class OrderDetailDto(
 
-    @SerializedName("id")
-    var orderDetailId: Int,
+    @SerializedName("orderDetaiId")
+    var order_detai_id: Int,
 
-    @SerializedName("orderid")
+    @SerializedName("orderId")
     var order_id:Int,
 
     @SerializedName("productDescription")
@@ -19,18 +19,19 @@ data class OrderDetailDto(
     @SerializedName("unitPrice")
     var unit_price: Double,
 
+    @SerializedName("subtotal")
+    var sub_total: String,
+
     @SerializedName("image")
     var product_image: String,
 
 
-    @SerializedName("productEan")
-    var product_ean:String,
+    @SerializedName("ean")
+    var ean:String,
 
-    @SerializedName("serialNumberRequired")
-    var serial_number_required:Boolean,
 
-    @SerializedName("productsSerialNumber")
-    var serail_numbers:List<ProductSerialNumberDto>?=null
+    @SerializedName("serialNumbers")
+    var serail_numbers:List<ProductSerialNumberDto>
 )
 
 

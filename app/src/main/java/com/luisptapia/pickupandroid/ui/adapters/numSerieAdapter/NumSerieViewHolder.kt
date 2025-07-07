@@ -13,8 +13,9 @@ class NumSerieViewHolder(
     fun bind(numSerie: ProductSerialNumberDto,
               title : String){
 
-        if(numSerie.serial_number == ""){
-            binding.tiNumSerie.setText(numSerie.serial_number)
+        if(numSerie.num_serie == ""){
+            binding.tiNumSerie.setText(numSerie.num_serie)
+            binding.tiNumSerie.tag = numSerie.id
         }
 
         binding.tvProductTitle.text = title

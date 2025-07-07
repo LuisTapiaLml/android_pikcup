@@ -7,8 +7,14 @@
     android:background="@color/backgroundColor"
     tools:context=".ui.fragments.OrderDetailFragment">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewContainer"
+        >
 
-    <androidx.constraintlayout.widget.Guideline
+
+        <androidx.constraintlayout.widget.Guideline
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/glMarginLeft"
@@ -16,250 +22,313 @@
             app:layout_constraintGuide_begin="15dp"
             />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/glMarginRight"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="15dp"
-        />
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:paddingBottom="15dp"
-        android:background="@color/white"
-        android:id="@+id/clData"
-        >
-
         <androidx.constraintlayout.widget.Guideline
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/glDataMarginLeft"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="15dp"
-            />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/glDataMarginRight"
+            android:id="@+id/glMarginRight"
             android:orientation="vertical"
             app:layout_constraintGuide_end="15dp"
             />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/glDataTotal"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent=".66"
-            />
 
-        <TextView
-            android:layout_width="0dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tvOrderNumber"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/markedColor"
-            android:text="2456134"
-            app:layout_constraintStart_toStartOf="@+id/glDataMarginLeft"
-            app:layout_constraintEnd_toEndOf="@+id/glDataMarginRight"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingBottom="15dp"
+            android:background="@color/white"
+            android:id="@+id/clData"
+            >
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/glDataMarginLeft"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="15dp"
+                />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/glDataMarginRight"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="15dp"
+                />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/glDataTotal"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".66"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvOrderNumber"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/markedColor"
+                app:layout_constraintStart_toStartOf="@+id/glDataMarginLeft"
+                app:layout_constraintEnd_toEndOf="@+id/glDataMarginRight"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="15dp"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/colorSecundary"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/glDataMarginRight"
+                app:layout_constraintStart_toEndOf="@+id/glDataTotal"
+                android:textSize="16sp"
+                android:id="@+id/tvOrderDate"
+                />
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/chStatus"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/glDataMarginLeft"
+                app:layout_constraintTop_toBottomOf="@+id/tvOrderNumber"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/chStatus"
+                app:layout_constraintStart_toStartOf="@+id/glDataMarginLeft"
+                app:layout_constraintBottom_toBottomOf="@+id/tvCustomerName"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:textSize="14sp"
+                android:text="@string/nombre"
+                android:id="@+id/tvTitleCustomerName"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/tvTitleCustomerName"
+                app:layout_constraintStart_toEndOf="@+id/tvTitleCustomerName"
+                app:layout_constraintEnd_toStartOf="@+id/glDataTotal"
+                android:textSize="14sp"
+                android:textColor="@color/colorSecundary"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/tvCustomerName"
+                />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleCustomerName"
+                app:layout_constraintStart_toStartOf="@+id/glDataMarginLeft"
+                android:layout_marginTop="10dp"
+                android:textSize="14sp"
+                android:text="@string/telefono"
+                android:id="@+id/tvTitlePhone"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/tvTitlePhone"
+                app:layout_constraintStart_toEndOf="@+id/tvTitlePhone"
+                app:layout_constraintEnd_toStartOf="@+id/glDataTotal"
+                android:textSize="14sp"
+                android:textColor="@color/colorSecundary"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/tvPhone"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitlePhone"
+                app:layout_constraintStart_toStartOf="@+id/glDataMarginLeft"
+                app:layout_constraintBottom_toBottomOf="@+id/tvEmail"
+                android:layout_marginTop="10dp"
+                android:textSize="14sp"
+                android:text="@string/email"
+                android:id="@+id/tvTitleEmail"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/tvTitleEmail"
+                app:layout_constraintStart_toEndOf="@+id/tvTitleEmail"
+                app:layout_constraintEnd_toStartOf="@+id/glDataTotal"
+                android:textSize="14sp"
+                android:textColor="@color/colorSecundary"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/tvEmail"
+                />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="@string/total"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/tvTitleTotal"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/chStatus"
+                app:layout_constraintStart_toEndOf="@id/glDataTotal"
+                app:layout_constraintEnd_toStartOf="@+id/glDataMarginRight"
+                android:gravity="center"
+                />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/colorSecundary"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/tvTotal"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleTotal"
+                app:layout_constraintStart_toEndOf="@id/glDataTotal"
+                app:layout_constraintEnd_toStartOf="@+id/glDataMarginRight"
+                android:gravity="center"
+                />
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/rvProductsList"
+            app:layout_constraintTop_toBottomOf="@+id/clData"
+            app:layout_constraintStart_toStartOf="@id/glMarginLeft"
+            app:layout_constraintEnd_toEndOf="@id/glMarginRight"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="55dp"
             android:layout_marginTop="15dp"
+            android:background="@color/white"
             />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="05/05/2025 16:34"
-            android:gravity="center"
-            android:textColor="@color/colorSecundary"
-            android:layout_marginTop="20dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/glDataMarginRight"
-            app:layout_constraintStart_toEndOf="@+id/glDataTotal"
-            android:textSize="16sp"
-            />
 
-        <com.google.android.material.chip.Chip
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/chStatus"
-            android:textSize="14sp"
-            android:textColor="@color/colorPrimary"
-            android:text="Asignado"
-            app:layout_constraintStart_toStartOf="@+id/glDataMarginLeft"
-            app:layout_constraintTop_toBottomOf="@+id/tvOrderNumber"
-            android:backgroundTint="@color/colorWarning"
-            />
 
-        <TextView
+        <Button
+            style="?attr/materialButtonOutlinedStyle"
+            android:id="@+id/btRechazar"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@+id/chStatus"
-            app:layout_constraintStart_toStartOf="@+id/glDataMarginLeft"
-            app:layout_constraintBottom_toBottomOf="@+id/tvCustomerName"
-            android:gravity="center"
-            android:layout_marginTop="5dp"
-            android:textSize="14sp"
-            android:text="Nombre:"
-            android:id="@+id/tvTitleCustomerName"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="bold"
-            />
-
-        <TextView
-            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@+id/tvTitleCustomerName"
-            app:layout_constraintStart_toEndOf="@+id/tvTitleCustomerName"
-            app:layout_constraintEnd_toStartOf="@+id/glDataTotal"
-            android:textSize="14sp"
-            android:text="Juan Pérez"
-            android:textColor="@color/colorSecundary"
-            android:layout_marginLeft="5dp"
-            android:id="@+id/tvCustomerName"
+            android:text="@string/rechazar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btConfirmar"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/colorDanger"
+            app:strokeColor="@color/colorDanger"
+            android:visibility="gone"
             />
 
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitleCustomerName"
-            app:layout_constraintStart_toStartOf="@+id/glDataMarginLeft"
-            android:layout_marginTop="10dp"
-            android:textSize="14sp"
-            android:text="Teléfono:"
-            android:id="@+id/tvTitlePhone"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="bold"
-            />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@+id/tvTitlePhone"
-            app:layout_constraintStart_toEndOf="@+id/tvTitlePhone"
-            app:layout_constraintEnd_toStartOf="@+id/glDataTotal"
-            android:textSize="14sp"
-            android:text="5555555555"
-            android:textColor="@color/colorSecundary"
-            android:layout_marginLeft="5dp"
-            android:id="@+id/tvPhone"
-            />
-
-
-        <TextView
+        <Button
+            android:id="@+id/btConfirmar"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitlePhone"
-            app:layout_constraintStart_toStartOf="@+id/glDataMarginLeft"
-            app:layout_constraintBottom_toBottomOf="@+id/tvEmail"
-            android:layout_marginTop="10dp"
-            android:textSize="14sp"
-            android:text="Email:"
-            android:id="@+id/tvTitleEmail"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="bold"
-
-            />
-
-        <TextView
-            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@+id/tvTitleEmail"
-            app:layout_constraintStart_toEndOf="@+id/tvTitleEmail"
-            app:layout_constraintEnd_toStartOf="@+id/glDataTotal"
-            android:textSize="14sp"
-            android:text="correo@ejemplo.com"
-            android:textColor="@color/colorSecundary"
-            android:layout_marginLeft="5dp"
-            android:id="@+id/tvEmail"
+            android:text="@string/confirmar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/glMarginRight"
+            android:backgroundTint="@color/markedColor"
+            android:textColor="@color/white"
+            android:visibility="gone"
             />
 
-
-        <TextView
-            android:layout_width="0dp"
+        <Button
+            android:id="@+id/btEntregar"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:text="Total"
-            android:textColor="@color/colorPrimary"
-            android:layout_marginLeft="5dp"
-            android:id="@+id/tvTitleTotal"
-            android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@+id/chStatus"
-            app:layout_constraintStart_toEndOf="@id/glDataTotal"
-            app:layout_constraintEnd_toStartOf="@+id/glDataMarginRight"
-            android:gravity="center"
+            android:text="@string/entregar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/glMarginRight"
+            android:backgroundTint="@color/colorSuccess"
+            android:textColor="@color/white"
             />
-
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:text="$106,246"
-            android:textColor="@color/colorSecundary"
-            android:layout_marginLeft="5dp"
-            android:id="@+id/tvTotal"
-            android:layout_marginTop="5dp"
-            android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitleTotal"
-            app:layout_constraintStart_toEndOf="@id/glDataTotal"
-            app:layout_constraintEnd_toStartOf="@+id/glDataMarginRight"
-            android:gravity="center"
-            />
-
 
 
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:id="@+id/rvProductsList"
-        app:layout_constraintTop_toBottomOf="@+id/clData"
-        app:layout_constraintStart_toStartOf="@id/glMarginLeft"
-        app:layout_constraintEnd_toEndOf="@id/glMarginRight"
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="55dp"
-        android:layout_marginTop="15dp"
-        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:indeterminateDrawable="@drawable/loading"
+        android:indeterminateDuration="1500"
+        android:visibility="invisible"
         />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/messageErrorContainer"
+        android:visibility="gone"
+        >
 
-    <Button
-        style="?attr/materialButtonOutlinedStyle"
-        android:id="@+id/outlinedButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Rechazar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btConfirmar"
-        android:layout_marginRight="10dp"
-        android:textColor="@color/colorDanger"
-        app:strokeColor="@color/colorDanger"
-        />
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent=".45"
+            android:orientation="horizontal"
+            android:id="@+id/glCenterTop"
+            />
 
-    <Button
-        android:id="@+id/btConfirmar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Confirmar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/glMarginRight"
-        android:backgroundTint="@color/markedColor"
-        android:textColor="@color/white"
-        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/glCenterTop"
+            android:gravity="center"
+            android:text="@string/order_detail_error"
+            android:id="@+id/tvErrorMessage"
+            android:textColor="@color/colorPrimary"
+            />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tvErrorMessage"
+            android:gravity="center"
+            android:text="@string/reload"
+            android:textColor="@color/markedColor"
+            android:selectAllOnFocus="false"
+            android:linksClickable="false"
+            android:autoLink="all"
+            android:id="@+id/tvReload"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

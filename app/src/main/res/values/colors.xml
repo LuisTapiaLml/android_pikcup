@@ -16,4 +16,8 @@
     <color name="colorSuccess">#28a745</color>
     <color name="colorWarning">#ffc107</color>
 
+    <color name="colorSplashScreenBackground">#f1f1f1</color>
+
+
+
 </resources>

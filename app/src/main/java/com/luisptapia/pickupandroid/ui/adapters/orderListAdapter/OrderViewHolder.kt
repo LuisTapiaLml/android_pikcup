@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.luisptapia.pickupandroid.data.remote.model.OrderDto
 import com.luisptapia.pickupandroid.databinding.OrderElementBinding
 import com.luisptapia.pickupandroid.R
+import com.luisptapia.pickupandroid.utils.formatDate
 
 class OrderViewHolder(
     private val binding:OrderElementBinding
@@ -48,9 +49,11 @@ class OrderViewHolder(
 
         binding.apply {
             CHStatus.text = order.status
-            binding.tvOrderDate.text = order.order_date
-            binding.tvOrderNumber.text = order.order_number
+            binding.tvOrderDate.text = formatDate(order.order_date)
+            binding.tvOrderNumber.text = order.id.toString()
             binding.tvCustomerName.text = order.customer_name
+
+
 
             CHStatus.setChipBackgroundColorResource(colorRes)
 

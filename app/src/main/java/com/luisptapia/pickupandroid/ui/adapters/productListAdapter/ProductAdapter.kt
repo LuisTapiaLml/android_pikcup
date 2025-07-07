@@ -26,7 +26,7 @@ class ProductAdapter(
 
         holder.bind(product)
 
-        if(product.serial_number_required){
+        if(product.serail_numbers.size > 0 ){
             //Para el click
             holder.itemView.setOnClickListener {
                 onProductClick(product)

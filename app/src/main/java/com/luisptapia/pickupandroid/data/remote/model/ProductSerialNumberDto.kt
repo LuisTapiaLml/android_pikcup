@@ -5,16 +5,17 @@ import com.google.gson.annotations.SerializedName
 data class ProductSerialNumberDto(
 
     @SerializedName("id")
-    var serial_number_id: Int,
+    var id: Int,
 
 
-    @SerializedName("orderid")
-    var order_id:Int,
+    @SerializedName("orderDetaiId")
+    var order_detaiId:Int,
 
 
-    @SerializedName("serialNumber")
-    var serial_number:String
+    @SerializedName("ean")
+    var ean:String,
 
+    @SerializedName("numSerie")
+    var num_serie:String,
 
-
-    )
+)
