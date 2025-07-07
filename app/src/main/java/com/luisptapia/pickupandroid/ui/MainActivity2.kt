@@ -1,5 +1,6 @@
 package com.luisptapia.pickupandroid.ui
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
@@ -37,6 +38,7 @@ class MainActivity2 : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         networkConnection = NetworkConnectionLiveData(application)
 
