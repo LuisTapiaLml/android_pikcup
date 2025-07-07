@@ -178,7 +178,8 @@
         app:layout_constraintTop_toBottomOf="@id/tfSearch"
         app:layout_constraintStart_toEndOf="@+id/glMarginLeft"
         app:layout_constraintEnd_toStartOf="@+id/btReload"
-        app:checkedButton="@id/btActiveFilter">
+        app:checkedButton="@+id/btActiveFilter"
+        >
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btActiveFilter"
@@ -189,22 +190,24 @@
             app:toggleCheckedStateOnClick="true"
             android:textSize="11sp"
             app:strokeColor="@color/markedColor"
-            style="@style/MyToggleButtonStyle"
-            android:backgroundTint="@color/markedColor"
-            android:textColor="@color/white"
-
+            app:strokeWidth="1dp"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/markedColor"
             />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btFinishFilter"
-
-            style="@style/MyToggleButtonStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Finalizados"
+            app:toggleCheckedStateOnClick="true"
             android:textSize="11sp"
-            app:strokeColor="@color/markedColor" />
+            app:strokeColor="@color/markedColor"
+            app:strokeWidth="1dp"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/markedColor"
+            />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btAllFilter"
@@ -212,9 +215,13 @@
             android:textSize="11sp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            style="@style/MyToggleButtonStyle"
-            android:text="Todos"
+            app:toggleCheckedStateOnClick="true"
             app:strokeColor="@color/markedColor"
+            app:strokeWidth="1dp"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/markedColor"
+            android:text="Todos"
+
             />
     </com.google.android.material.button.MaterialButtonToggleGroup>
 

@@ -72,6 +72,8 @@ class OrderDetailFragment : Fragment() {
         viewModel.loadOrder(orderId)
 
 
+
+
         binding.tvReload.setOnClickListener {
             viewModel.refresh(orderId)
         }

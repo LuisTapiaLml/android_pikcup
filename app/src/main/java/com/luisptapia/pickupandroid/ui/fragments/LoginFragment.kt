@@ -82,7 +82,7 @@ class LoginFragment : Fragment() {
                         )
                     )
 
-                    app.sessionManager.saveToken(user.token)
+                    app.sessionManager.saveToken(user.token,user.name)
 
                     app.isLoggedInLiveData.postValue(true)
 

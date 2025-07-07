@@ -1,25 +1,25 @@
 package com.luisptapia.pickupandroid.ui.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
+import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.luisptapia.pickupandroid.R
 import com.luisptapia.pickupandroid.application.RTPickupApp
 import com.luisptapia.pickupandroid.data.PickupRepository
-import com.luisptapia.pickupandroid.data.remote.model.OrderDto
 import com.luisptapia.pickupandroid.databinding.FragmentOrderListBinding
-import com.luisptapia.pickupandroid.modelView.OrderDetailViewModel
 import com.luisptapia.pickupandroid.modelView.OrderListViewModel
 import com.luisptapia.pickupandroid.ui.adapters.orderListAdapter.OrderAdapter
 import com.luisptapia.pickupandroid.utils.Constants
-import kotlinx.coroutines.launch
-import retrofit2.HttpException
+import com.luisptapia.pickupandroid.utils.SessionManager
+import kotlin.math.log
 
 
 class OrderListFragment : Fragment() {
@@ -42,6 +42,7 @@ class OrderListFragment : Fragment() {
     }
 
 
+    @SuppressLint("ResourceAsColor")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -56,6 +57,75 @@ class OrderListFragment : Fragment() {
 
         binding.btReload.setOnClickListener {
             viewModel.refresh()
+        }
+
+        binding.tfSearch.editText?.doOnTextChanged { text, _, _, _ ->
+            viewModel.setQuery(text.toString())
+        }
+
+        binding.btLogout.setOnClickListener {
+            app.sessionManager.logout()
+            app.isLoggedInLiveData.postValue(false)
+        }
+
+        binding.tvStore.text = app.sessionManager.getUser()
+
+        binding.toggleButtonGroup.check(R.id.btActiveFilter)
+
+        binding.btActiveFilter.setBackgroundColor(ContextCompat.getColor(requireContext(),  R.color.markedColor))
+        binding.btActiveFilter.setTextColor(R.color.white)
+
+        viewModel.setStatusFilter("activos")
+
+
+
+        binding.toggleButtonGroup.addOnButtonCheckedListener { group, checkedId, isChecked ->
+
+            if (isChecked) {
+
+                binding.btActiveFilter.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
+                binding.btActiveFilter.setTextColor(ContextCompat.getColor(requireContext(), R.color.markedColor))
+
+                binding.btFinishFilter.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
+                binding.btFinishFilter.setTextColor(ContextCompat.getColor(requireContext(), R.color.markedColor))
+
+                binding.btAllFilter.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
+                binding.btAllFilter.setTextColor(ContextCompat.getColor(requireContext(), R.color.markedColor))
+
+                val filter = when (checkedId) {
+                    R.id.btAllFilter -> "todos"
+                    R.id.btFinishFilter -> "finalizados"
+                    else -> "activos"
+                }
+
+
+
+                when (checkedId) {
+
+                    R.id.btAllFilter -> {
+                        binding.btAllFilter.setBackgroundColor(ContextCompat.getColor(requireContext(),  R.color.markedColor))
+                        binding.btAllFilter.setTextColor(R.color.white)
+                    }
+                    R.id.btFinishFilter ->{
+
+                        binding.btFinishFilter.setBackgroundColor(ContextCompat.getColor(requireContext(),  R.color.markedColor))
+                        binding.btFinishFilter.setTextColor(R.color.white)
+
+                    }
+                    R.id.btActiveFilter-> {
+
+                        binding.btActiveFilter.setBackgroundColor(ContextCompat.getColor(requireContext(),  R.color.markedColor))
+                        binding.btActiveFilter.setTextColor(R.color.white)
+
+                    }
+                }
+
+
+                Log.d(Constants.APP_NAME_LOGS, "Filtro: ${filter}")
+
+                viewModel.setStatusFilter(filter)
+
+            }
         }
 
         viewModel.orders.observe(viewLifecycleOwner) { orders ->
@@ -95,10 +165,7 @@ class OrderListFragment : Fragment() {
 
         viewModel.loadOrders()
 
-        binding.btLogout.setOnClickListener {
-            app.sessionManager.logout()
-            app.isLoggedInLiveData.postValue(false)
-        }
+
     }
 
 

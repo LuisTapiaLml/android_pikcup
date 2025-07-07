@@ -10,6 +10,7 @@ class SessionManager(context: Context) {
     companion object {
         private const val PREFS_NAME = "user_session"
         private const val KEY_TOKEN = "auth_token"
+        private const val KEY_USER = "user"
     }
 
     private val prefs: SharedPreferences =
@@ -22,12 +23,17 @@ class SessionManager(context: Context) {
         _isLoggedIn.value = getToken() != null
     }
 
-    fun saveToken(token: String) {
+    fun saveToken(token: String, user : String ) {
+
         prefs.edit().putString(KEY_TOKEN, token).apply()
+        prefs.edit().putString(KEY_USER, user).apply()
+
         _isLoggedIn.postValue(true)
     }
 
     fun getToken(): String? = prefs.getString(KEY_TOKEN, null)
+
+    fun getUser(): String? = prefs.getString(KEY_USER, null)
 
     fun logout() {
         prefs.edit().clear().apply()
